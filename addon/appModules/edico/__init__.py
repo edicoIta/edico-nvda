@@ -23,8 +23,11 @@ addonHandler.initTranslation()
 
 class AppModule(appModuleHandler.AppModule):
     
+    #Translators: Insert Symbol dialog. You can set the name of the window that appears when pressing F5, natively EDICO doesn't speak nothing. 
     CONST_INSERT_SYMBOL_WINDOW = _("Inserisci simbolo")
+    #Translators: this is the name of the Graphic viewer window obbject on the main window, you can get the correct name for your language using the navigator object.
     CONST_GRAPHIC_VIEWER_WINDOW = _("Visualizzazione reale")
+    #Translators: this is the name of the Braille viewer window obbject on the main window, you can get the correct name for your language using the navigator object.
     CONST_BRAILLE_VIEWER_WINDOW = _("Visualizzazione Braille")
     
     def __init__(self, *args, **kwargs):
