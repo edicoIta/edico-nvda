@@ -72,7 +72,7 @@ sign  \x005A  13567  #
 sign  \x005B  2367  #
 sign  \x005C  123456  #
 sign  \x005D  3568  #
-sign  \x005E  45  #
+sign  \x005E  23467  #
 sign  \x005F  6  #
 sign  \x0060  58  #
 sign  \x0061  1  #
@@ -148,7 +148,7 @@ sign  \x00C5  12368  #
 sign  \x00C6  1268  #
 sign  \x00C7  1234678  #
 sign  \x00C8  234678  #
-sign  \x00C9  23467  #
+sign  \x00C9  45  #
 sign  \x00CA  1578  #
 sign  \x00CB  124678  #
 sign  \x00CC  345  #
