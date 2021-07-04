@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'edico' '0.1'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2021-07-04 16:14+0200\n"
-"PO-Revision-Date: 2021-07-04 16:20+0100\n"
+"POT-Creation-Date: 2021-07-04 16:30+0200\n"
+"PO-Revision-Date: 2021-07-04 16:36+0100\n"
 "Last-Translator: Alberto Zanella\n"
 "Language-Team: edicoIta\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-Language: Italian\n"
 "X-Poedit-Country: Italy\n"
 
@@ -39,12 +39,12 @@ msgstr "Inserisci Simbolo"
 #. Translators: this is the name of the Graphic viewer window obbject on the main window, you can get the correct name for your language using the navigator object.
 #: addon\appModules\edico\__init__.py:29
 msgid "Graphic viewer"
-msgstr "Visualizzazione Reale"
+msgstr "Visualizzazione reale"
 
 #. Translators: this is the name of the Braille viewer window obbject on the main window, you can get the correct name for your language using the navigator object.
 #: addon\appModules\edico\__init__.py:31
 msgid "Braille viewer"
-msgstr "Visualizzazione braille"
+msgstr "Visualizzazione Braille"
 
 #. Translators: Message presented in input help mode.
 #: addon\appModules\edico\__init__.py:70
@@ -91,4 +91,38 @@ msgstr "Disabilita la lettura in braille per paragrafi"
 #: addon\appModules\edico\edicoProfileSetup.py:135
 msgid "Disable word wrappping of the braille line"
 msgstr "Disabilita a capo su parole intere per il  braille"
+
+#. Translators: title of the message box that appears when the user is installing the addon and an older version prevents the update to be completed.
+#: addon\installTasks.py:17
+msgid "Incompatible version of the addon detected"
+msgstr "Rilevata incompatibilità di versione"
+
+#. Translators: text of the message box that appears when the user is installing the addon and an older version prevents the update to be completed.
+#: addon\installTasks.py:20
+msgid ""
+"An old, incompatible version of this addon has been detected.\n"
+"This prevents the installation to be completed.\n"
+"Please uninstall the previous version before proceeding with the EDICo addon setup.\n"
+msgstr ""
+"E' stata rilevata una precedente versione dell'addon, inconpatibile con la versione attuale.\n"
+"Ciò non permette di completare l'installazione in modo corretto.\n"
+"Si prega di disinstallare versioni precedenti prima di procedere all'installazione dell'addon EDICO.\n"
+
+#. Translators: title of the message box that appears when user is installing the addon in NVDA and an "edico" profile is already present.
+#: addon\installTasks.py:26
+msgid "edico profile already exists"
+msgstr "Il profilo edico esiste già"
+
+#. Translators: text of the message box that appears when user is installing the addon in NVDA and a "edico" profile is already present.
+#: addon\installTasks.py:29
+msgid ""
+"Another profile named \"edico\" is already present in your NVDA configuration. \n"
+"This may prevents the addon on create and configure the edico profile correctly.\n"
+"Please review default options for this addon using the Revert EDICO Profile Wizard (pressing nvda+alt+r) while the EDICO Application is active.\n"
+"Press OK to complete the addon Setup.\n"
+msgstr ""
+"Un precedente profilo chiamato \"edico\" è già presente nell'attuale configurazione di NVDA.\n"
+"Ciò non permette all'addon di creare e configurare il profilo edico in modo corretto.\n"
+"Si prega di verificare le opzioni predefinite per questo addon, utilizzando il Ripristino Guidato profilo  EDICO (premendo nvda+alt+r) quando l'applicazione EDICO è in uso.\n"
+"Premere OK per completare l'installazione dell'addon.\n"
 
