@@ -20,10 +20,10 @@ addon_info = {
 	# Add-on summary, usually the user visible name of the addon.
 	# Translators: Summary for this add-on
 	# to be shown on installation and add-on information found in Add-ons Manager.
-	"addon_summary": _("EDICO Math Editor addon"),
+	"addon_summary": _("EDICO Scientific Editor addon"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-	"addon_description": _("""This addon provides access to the EDICO math editor"""),
+	"addon_description": _("""This addon provides access to the EDICO scientific editor"""),
 	# version
 	"addon_version": "0.1",
 	# Author(s)
@@ -53,7 +53,7 @@ addon_info = {
 pythonSources = []
 
 # Files that contain strings for translation. Usually your python sources
-i18nSources = pythonSources + ["buildVars.py"]
+i18nSources = pythonSources + ["buildVars.py", "addon/appModules/edico/__init__.py", "addon/appModules/edico/edicoProfileSetup.py"]
 
 # Files that will be ignored when building the nvda-addon file
 # Paths are relative to the addon directory, not to the root directory of your addon sources.

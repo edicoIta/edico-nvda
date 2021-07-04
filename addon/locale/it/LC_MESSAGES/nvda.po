@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 'edico' '0.1'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2021-07-04 16:14+0200\n"
+"PO-Revision-Date: 2021-07-04 16:20+0100\n"
+"Last-Translator: Alberto Zanella\n"
+"Language-Team: edicoIta\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: Italy\n"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+#: buildVars.py:23
+msgid "EDICO Scientific Editor addon"
+msgstr "Add-On per EDICO"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid "This addon provides access to the EDICO scientific editor"
+msgstr "Questo Add-On permette di utilizzare EDICO - l'Editor Scientifico"
+
+#. Translators: Insert Symbol dialog. You can set the name of the window that appears when pressing F5, natively EDICO doesn't speak nothing.
+#: addon\appModules\edico\__init__.py:27
+msgid "Insert symbol"
+msgstr "Inserisci Simbolo"
+
+#. Translators: this is the name of the Graphic viewer window obbject on the main window, you can get the correct name for your language using the navigator object.
+#: addon\appModules\edico\__init__.py:29
+msgid "Graphic viewer"
+msgstr "Visualizzazione Reale"
+
+#. Translators: this is the name of the Braille viewer window obbject on the main window, you can get the correct name for your language using the navigator object.
+#: addon\appModules\edico\__init__.py:31
+msgid "Braille viewer"
+msgstr "Visualizzazione braille"
+
+#. Translators: Message presented in input help mode.
+#: addon\appModules\edico\__init__.py:70
+msgid "Shows a dialog to revert edico profile options to the default."
+msgstr "Mostra una finestra di dialogo per ripristinare le impostazioni del profilo utente di EDICO usato in NVDA."
+
+#. Translators: This string is the file name of the Lambda braille table for the translated language. The file should be present in the "brailleTables" directory in this addon. The default is the italian braille translation table.
+#: addon\appModules\edico\edicoProfileSetup.py:22
+msgid "edico-ita.utb"
+msgstr "edico-ita.utb"
+
+#. Translators: This is the label for the Quick Profile Wizard dialog.
+#. This dialog helps the user to reset relevant profile options without deleting his custom settings.
+#: addon\appModules\edico\edicoProfileSetup.py:114
+msgid "Revert EDICO Profile Wizard"
+msgstr "Ripristino guidato profilo EDICO"
+
+#. Translators: This is the static text of the Quick Profile Wizard dialog.
+#: addon\appModules\edico\edicoProfileSetup.py:119
+msgid "Choose which options you want to reset to the default value for the EDICO profile"
+msgstr "Scegliere  quali opzioni si desidera ripristinare per il profilo EDICO di NVDA."
+
+#. Translators: This is the label for a checkbox in the
+#. Quick Profile Wizard dialog.
+#: addon\appModules\edico\edicoProfileSetup.py:123
+#, python-format
+msgid "Keep the EDICO braille table for the current language (%s)"
+msgstr "Mantieni la tabella braille di EDICO per la lingua attualmente in uso (%s)"
+
+#. Translators: This is the label for a checkbox in the
+#. Quick Profile Wizard dialog.
+#: addon\appModules\edico\edicoProfileSetup.py:127
+msgid "Set the braille cursor to tether the focus"
+msgstr "Imposta il cursore braille per inseguire il focus"
+
+#. Translators: This is the label for a checkbox in the
+#. Quick Profile Wizard dialog.
+#: addon\appModules\edico\edicoProfileSetup.py:131
+msgid "Disable the Braille reading by paragraph"
+msgstr "Disabilita la lettura in braille per paragrafi"
+
+#. Translators: This is the label for a checkbox in the
+#. Quick Profile Wizard dialog.
+#: addon\appModules\edico\edicoProfileSetup.py:135
+msgid "Disable word wrappping of the braille line"
+msgstr "Disabilita a capo su parole intere per il  braille"
+
