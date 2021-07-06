@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'edico' '0.1'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2021-07-04 16:30+0200\n"
-"PO-Revision-Date: 2021-07-04 16:36+0100\n"
+"POT-Creation-Date: 2021-07-06 14:13+0200\n"
+"PO-Revision-Date: 2021-07-06 14:17+0100\n"
 "Last-Translator: Alberto Zanella\n"
 "Language-Team: edicoIta\n"
 "MIME-Version: 1.0\n"
@@ -46,8 +46,13 @@ msgstr "Visualizzazione reale"
 msgid "Braille viewer"
 msgstr "Visualizzazione Braille"
 
+#. Translators: the Run Demo button
+#: addon\appModules\edico\__init__.py:33
+msgid "Run demo"
+msgstr "Esegui demo"
+
 #. Translators: Message presented in input help mode.
-#: addon\appModules\edico\__init__.py:70
+#: addon\appModules\edico\__init__.py:74
 msgid "Shows a dialog to revert edico profile options to the default."
 msgstr "Mostra una finestra di dialogo per ripristinare le impostazioni del profilo utente di EDICO usato in NVDA."
 

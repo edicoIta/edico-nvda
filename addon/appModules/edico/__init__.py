@@ -29,6 +29,8 @@ class AppModule(appModuleHandler.AppModule):
     CONST_GRAPHIC_VIEWER_WINDOW = _("Graphic viewer")
     #Translators: this is the name of the Braille viewer window obbject on the main window, you can get the correct name for your language using the navigator object.
     CONST_BRAILLE_VIEWER_WINDOW = _("Braille viewer")
+    #Translators: the Run Demo button
+    runDemoButtonText = _("Run demo")
     
     def __init__(self, *args, **kwargs):
         super(AppModule, self).__init__(*args, **kwargs)
@@ -53,6 +55,8 @@ class AppModule(appModuleHandler.AppModule):
         try :
             if obj.role == controlTypes.ROLE_PANE and obj.childCount == 2 and obj.firstChild.firstChild.role == controlTypes.ROLE_EDITABLETEXT and obj.lastChild.firstChild.role == controlTypes.ROLE_LIST and obj.name == None:
                 obj.name = self.CONST_INSERT_SYMBOL_WINDOW
+            if obj.role == controlTypes.ROLE_BUTTON and obj.name and "Ejecutar demo" in obj.name :
+                obj.name = obj.name.replace("Ejecutar demo",self.runDemoButtonText)
         except: pass
     
     def _get_statusBarTextInfo(self) :
