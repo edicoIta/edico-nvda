@@ -20,7 +20,7 @@ addon_info = {
 	# Add-on summary, usually the user visible name of the addon.
 	# Translators: Summary for this add-on
 	# to be shown on installation and add-on information found in Add-ons Manager.
-	"addon_summary": _("EDICO Scientific Editor addon"),
+	"addon_summary": _("EDICO Scientific Editor"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""This addon provides access to the EDICO scientific editor"""),

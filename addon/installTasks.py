@@ -19,17 +19,17 @@ oldaddontitle = _('Incompatible version of the addon detected')
 # Translators: text of the message box that appears when the user is installing the addon and an older version prevents the update to be completed.
 oldaddonmsg = _("""An old, incompatible version of this addon has been detected.
 This prevents the installation to be completed.
-Please uninstall the previous version before proceeding with the EDICo addon setup.
+Please uninstall the previous version before proceeding with the EDICO addon setup.
 """)
 
 # Translators: title of the message box that appears when user is installing the addon in NVDA and an "edico" profile is already present. 
 profilefoundtitle = _('edico profile already exists')
 
 # Translators: text of the message box that appears when user is installing the addon in NVDA and a "edico" profile is already present. 
-profilefoundmsg = _("""Another profile named "edico" is already present in your NVDA configuration. 
+profilefoundmsg = _("""Another profile named "edico" is already present in your NVDA configuration.
 This may prevents the addon on create and configure the edico profile correctly.
-Please review default options for this addon using the Revert EDICO Profile Wizard (pressing nvda+alt+r) while the EDICO Application is active.
-Press OK to complete the addon Setup.
+Please review default options for this addon using the Revert EDICO Profile Wizard (pressing NVDA+Alt+R) while the EDICO Application is active.
+Press OK to complete the addon setup.
 """)
 
 def onInstall():

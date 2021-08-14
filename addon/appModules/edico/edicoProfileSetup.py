@@ -132,7 +132,7 @@ class QuickProfileWizardDialog(SettingsDialog):
 		self.disableReadByParagraphCheckBox.SetValue(True)
 		# Translators: This is the label for a checkbox in the
 		# Quick Profile Wizard dialog.
-		self.disableBrailleWordWrapCheckBox=sHelper.addItem(wx.CheckBox(self,label=_("Disable word wrappping of the braille line")))
+		self.disableBrailleWordWrapCheckBox=sHelper.addItem(wx.CheckBox(self,label=_("Disable word wrapping of the braille line")))
 		self.disableBrailleWordWrapCheckBox.SetValue(True)
 
 	def postInit(self):
