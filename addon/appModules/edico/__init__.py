@@ -43,10 +43,11 @@ class AppModule(appModuleHandler.AppModule):
         edicoProfileSetup.addBrailleTableToGUI()
 
     def terminate(self) :
+        edicoObj.edicoApi._oEdico = None
         super(AppModule, self).terminate()
         #Clean-up custom braille tables
         edicoProfileSetup.removeBrailleTableToGUI()
-    
+        
     def chooseNVDAObjectOverlayClasses(self, obj, clsList):
         if self.isEdicoEditor(obj) :
             clsList.insert(0,edicoObj.EdicoEditor)
