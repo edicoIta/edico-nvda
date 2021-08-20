@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 #Addon for EDICO Math Editor
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
@@ -11,12 +13,15 @@ import speech
 import textInfos
 import NVDAObjects
 import config
+import addonHandler
 import braille
 import comHelper
 from logHandler import log
 import controlTypes
 import watchdog
 import NVDAObjects.window.edit as edit
+
+addonHandler.initTranslation()
 
 class EdicoCOMApiProvider :
     _EdicoObjName = 'Edico.EdicoComObj'
@@ -94,7 +99,29 @@ class EdicoEditor(edit.RichEdit20) :
         hwnd = self.windowHandle
         watchdog.cancellableSendMessage(hwnd,0x00C2,1,"^")
         self.event_typedCharacter(None)
+    
+    def script_typeComCaret(self,gesture) :
+        hwnd = self.windowHandle
+        watchdog.cancellableSendMessage(hwnd,0x00C2,1,"\u00a7")
+        self.event_typedCharacter(None)
         
+    def script_reportCurrentLine(self,gesture):
+        speech.speakText(edicoApi.getApiObject().GetLine())
+    #Translators: this is a custom implementation of the globalCommands gesture, it doesn't support spelling.
+    script_reportCurrentLine.__doc__=_("Reports the current line under the application cursor.")
+
+    
+    def script_reportCurrentSelection(self,gesture):
+        speech.speakText(edicoApi.getApiObject().GetHightLightedText())
+    #Translators: this is a custom implementation of the globalCommands gesture.
+    script_reportCurrentSelection.__doc__=_("Announces the current selection in edit controls and documents.")	
+
+    def script_sayAll(self, gesture):
+        speech.speakText(edicoApi.getApiObject().GetAll())
+    #Translators: Lambda can't read from the current caret position, the implementation of sayAll provided starts reading from the top of the document.
+    script_sayAll.__doc__ = _("reads from the beginning of the document up to the end of the text.")	
+
+    
     def script_f2(self,gesture):
         gesture.send()
         appm = self.appModule
@@ -107,10 +134,20 @@ class EdicoEditor(edit.RichEdit20) :
     
     __gestures = {
     'kb:shift+ì': 'typeCaret',
+    'kb:control+shift+ì': 'typeComCaret',
     'kb:f2': 'f2',
     'kb:control+k': 'reportAddedSymbol',
     'kb:control+i': 'reportAddedSymbol',
     'kb:control+d': 'caret_moveByLine',
     'kb:f4': 'f4',
     "kb:delete": "caret_deleteCharacter",
+    #Report selection
+    'kb(desktop):NVDA+shift+upArrow': 'reportCurrentSelection',
+    'kb(laptop):NVDA+shift+s': 'reportCurrentSelection',
+    #Say Line
+    'kb(desktop):NVDA+upArrow': 'reportCurrentLine',
+    'kb(laptop):NVDA+l': 'reportCurrentLine',
+    #SayAll override
+    "kb(desktop):NVDA+downArrow": "sayAll",
+    "kb(laptop):NVDA+a": "sayAll",
     }
