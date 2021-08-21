@@ -31,6 +31,8 @@ class AppModule(appModuleHandler.AppModule):
     CONST_BRAILLE_VIEWER_WINDOW = _("Braille viewer")
     #Translators: the Run Demo button
     runDemoButtonText = _("Run demo")
+    #Translators: the Machine identifier readonly edit
+    pcCodeEditText = _("Machine identifier:")
     
     def __init__(self, *args, **kwargs):
         super(AppModule, self).__init__(*args, **kwargs)
@@ -58,6 +60,8 @@ class AppModule(appModuleHandler.AppModule):
                 obj.name = self.CONST_INSERT_SYMBOL_WINDOW
             if obj.role == controlTypes.ROLE_BUTTON and obj.name and "Ejecutar demo" in obj.name :
                 obj.name = obj.name.replace("Ejecutar demo",self.runDemoButtonText)
+            if obj.role == controlTypes.ROLE_EDITABLETEXT and controlTypes.STATE_READONLY in obj.states and obj.name and "Identificador de equipo:" in obj.name :
+                obj.name = obj.name.replace("Identificador de equipo:",self.pcCodeEditText).replace("..",".")
         except: pass
     
     def _get_statusBarTextInfo(self) :
