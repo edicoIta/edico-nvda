@@ -95,16 +95,6 @@ class EdicoEditor(edit.RichEdit20) :
         speech.speakText(edicoApi.getApiObject().SayWord())
         braille.handler.handleCaretMove(self)
     
-    def script_typeCaret(self,gesture) :
-        hwnd = self.windowHandle
-        watchdog.cancellableSendMessage(hwnd,0x00C2,1,"^")
-        self.event_typedCharacter(None)
-    
-    def script_typeComCaret(self,gesture) :
-        hwnd = self.windowHandle
-        watchdog.cancellableSendMessage(hwnd,0x00C2,1,"\u00a7")
-        self.event_typedCharacter(None)
-        
     def script_reportCurrentLine(self,gesture):
         speech.speakText(edicoApi.getApiObject().GetLine())
     #Translators: this is a custom implementation of the globalCommands gesture, it doesn't support spelling.
@@ -133,8 +123,6 @@ class EdicoEditor(edit.RichEdit20) :
         appm.reportWindowStatus(appm.CONST_GRAPHIC_VIEWER_WINDOW)
     
     __gestures = {
-    'kb:shift+ì': 'typeCaret',
-    'kb:control+shift+ì': 'typeComCaret',
     'kb:f2': 'f2',
     'kb:control+k': 'reportAddedSymbol',
     'kb:control+i': 'reportAddedSymbol',
