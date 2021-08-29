@@ -124,6 +124,10 @@ class EdicoEditor(edit.RichEdit20) :
     
     __gestures = {
     'kb:f2': 'f2',
+    'kb:control+upArrow': 'caret_moveByLine',
+    'kb:control+downArrow': 'caret_moveByLine',
+    'kb:control+pageUp': 'caret_moveByLine',
+    'kb:control+pageDown': 'caret_moveByLine',
     'kb:control+k': 'reportAddedSymbol',
     'kb:control+i': 'reportAddedSymbol',
     'kb:control+d': 'caret_moveByLine',
