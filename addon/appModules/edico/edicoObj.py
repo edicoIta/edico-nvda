@@ -19,7 +19,7 @@ import comHelper
 from logHandler import log
 import controlTypes
 import watchdog
-import NVDAObjects.window.edit as edit
+from NVDAObjects.IAccessible import IAccessible
 
 addonHandler.initTranslation()
 
@@ -36,20 +36,29 @@ class EdicoCOMApiProvider :
     def isEmpty(self,cnt) : return len(cnt) > 0
 
 edicoApi = EdicoCOMApiProvider()
-class EdicoEditor(edit.RichEdit20) :
+class EdicoEditor(IAccessible) :
     hasBackspaced = False
     
+    #Translators: description of the calculator edit box
+    CALCULATOR_EQUATION_EDIT = _("equation")
     def detectPossibleSelectionChange(self) :
         newInfo=self.makeTextInfo(textInfos.POSITION_SELECTION)
         if(len(newInfo.text) == 0) : return
         speech.speakTextSelected(edicoApi.getApiObject().GetHightLightedText())
 
     def _get_role(self) :
-        return controlTypes.ROLE_EDITABLETEXT
+        if(self.IAccessibleObject.accDescription() == "equazione") :
+            return super(EdicoEditor,self)._get_role()
+        else: return controlTypes.ROLE_EDITABLETEXT
     
     def event_gainFocus(self):
+        super(EdicoEditor,self).event_gainFocus()
         txt = edicoApi.getApiObject().GetHightLightedText()
-        speech.speakText(edicoApi.getApiObject().GetObjectTypeAndText(self.windowHandle)+ " "+ edicoApi.getApiObject().GetLine())
+        if(edicoApi.getApiObject().GetObjectTypeAndText(self.windowHandle) != None) :
+            txt = edicoApi.getApiObject().GetObjectTypeAndText(self.windowHandle)
+        if edicoApi.getApiObject().GetLine() != None :
+            txt = txt + " " + edicoApi.getApiObject().GetLine()
+        speech.speakText(txt)
         braille.handler.handleGainFocus(self)
     
     def event_typedCharacter(self, ch):

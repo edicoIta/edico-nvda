@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'edico' '0.1'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2021-08-21 16:33+0200\n"
-"PO-Revision-Date: 2021-08-21 16:34+0100\n"
+"POT-Creation-Date: 2021-08-29 15:24+0200\n"
+"PO-Revision-Date: 2021-08-29 15:25+0100\n"
 "Last-Translator: Alberto Zanella\n"
 "Language-Team: edicoIta\n"
 "MIME-Version: 1.0\n"
@@ -102,18 +102,23 @@ msgstr "Disabilita la lettura in braille per paragrafi"
 msgid "Disable word wrapping of the braille line"
 msgstr "Disabilita a capo su parole intere per il  braille"
 
+#. Translators: description of the calculator edit box
+#: addon\appModules\edico\edicoObj.py:43
+msgid "equation"
+msgstr "equazione"
+
 #. Translators: this is a custom implementation of the globalCommands gesture, it doesn't support spelling.
-#: addon\appModules\edico\edicoObj.py:111
+#: addon\appModules\edico\edicoObj.py:110
 msgid "Reports the current line under the application cursor."
 msgstr "Legge la riga alla posizione del cursore nell'applicazione."
 
 #. Translators: this is a custom implementation of the globalCommands gesture.
-#: addon\appModules\edico\edicoObj.py:117
+#: addon\appModules\edico\edicoObj.py:116
 msgid "Announces the current selection in edit controls and documents."
 msgstr "Legge la selezione del testo nei campi editazione e nei documenti."
 
 #. Translators: Lambda can't read from the current caret position, the implementation of sayAll provided starts reading from the top of the document.
-#: addon\appModules\edico\edicoObj.py:122
+#: addon\appModules\edico\edicoObj.py:121
 msgid "reads from the beginning of the document up to the end of the text."
 msgstr "Legge dall'inizio del documento alla fine del testo."
 
