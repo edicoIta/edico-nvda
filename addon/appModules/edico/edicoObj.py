@@ -52,7 +52,6 @@ class EdicoEditor(IAccessible) :
         else: return controlTypes.ROLE_EDITABLETEXT
     
     def event_gainFocus(self):
-        super(EdicoEditor,self).event_gainFocus()
         txt = edicoApi.getApiObject().GetHightLightedText()
         if(edicoApi.getApiObject().GetObjectTypeAndText(self.windowHandle) != None) :
             txt = edicoApi.getApiObject().GetObjectTypeAndText(self.windowHandle)
