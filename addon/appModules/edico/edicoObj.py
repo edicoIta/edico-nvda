@@ -3,12 +3,14 @@
 #Addon for EDICO Math Editor
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Copyright (C) 2021 Alberto Zanella - IRIFOR
+#Copyright (C) 2022 Alberto Zanella - IRIFOR
 
 import eventHandler
 from . import sharedMessages as shMsg
 import appModuleHandler
+import re
 import api
+import ui
 import speech
 import textInfos
 import NVDAObjects
@@ -90,7 +92,13 @@ class EdicoEditor(IAccessible) :
     
     def script_caret_moveByCharacter(self, gesture):
         gesture.send()
-        speech.speakText(edicoApi.getApiObject().GetChar())
+        txt = edicoApi.getApiObject().GetChar()
+        if( (txt != ' ') and (len(txt) == 1) and re.match("[^A-Za-z0-9]",txt)): 
+            ui.message("entro")
+            info = self.makeTextInfo(textInfos.POSITION_SELECTION)
+            info.expand(textInfos.UNIT_CHARACTER)
+            speech.speakTextInfo(info, unit=textInfos.UNIT_CHARACTER, reason=controlTypes.OutputReason.CARET)
+        else: speech.speakText(txt)
         braille.handler.handleCaretMove(self)
     
     def script_caret_moveByLine(self, gesture):
@@ -138,6 +146,21 @@ class EdicoEditor(IAccessible) :
     'kb:control+pageDown': 'caret_moveByLine',
     'kb:control+k': 'reportAddedSymbol',
     'kb:control+i': 'reportAddedSymbol',
+    'kb:alt+rightArrow': 'caret_moveByCharacter',
+    'kb:alt+leftArrow': 'caret_moveByCharacter',
+    'kb:alt+1': 'caret_moveByCharacter',
+    'kb:alt+2': 'caret_moveByCharacter',
+    'kb:alt+3': 'caret_moveByCharacter',
+    'kb:alt+4': 'caret_moveByCharacter',
+    'kb:alt+shift+1': 'caret_moveByCharacter',
+    'kb:alt+shift+2': 'caret_moveByCharacter',
+    'kb:alt+shift+3': 'caret_moveByCharacter',
+    'kb:alt+shift+4': 'caret_moveByCharacter',
+    'kb:alt+f1': 'caret_moveByCharacter',
+    'kb:alt+f1': 'caret_moveByCharacter',
+    'kb:alt+f2': 'caret_moveByCharacter',
+    'kb:alt+f3': 'caret_moveByCharacter',
+    'kb:alt+f5': 'caret_moveByCharacter',
     'kb:control+d': 'caret_moveByLine',
     'kb:f4': 'f4',
     "kb:delete": "caret_deleteCharacter",
