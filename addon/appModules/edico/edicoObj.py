@@ -10,7 +10,6 @@ from . import sharedMessages as shMsg
 import appModuleHandler
 import re
 import api
-import ui
 import speech
 import textInfos
 import NVDAObjects
@@ -94,7 +93,6 @@ class EdicoEditor(IAccessible) :
         gesture.send()
         txt = edicoApi.getApiObject().GetChar()
         if( (txt != ' ') and (len(txt) == 1) and re.match("[^A-Za-z0-9]",txt)): 
-            ui.message("entro")
             info = self.makeTextInfo(textInfos.POSITION_SELECTION)
             info.expand(textInfos.UNIT_CHARACTER)
             speech.speakTextInfo(info, unit=textInfos.UNIT_CHARACTER, reason=controlTypes.OutputReason.CARET)
