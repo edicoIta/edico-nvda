@@ -56,11 +56,11 @@ class AppModule(appModuleHandler.AppModule):
     
     def event_NVDAObject_init(self, obj):
         try :
-            if obj.role == controlTypes.ROLE_PANE and obj.childCount == 2 and obj.firstChild.firstChild.role == controlTypes.ROLE_EDITABLETEXT and obj.lastChild.firstChild.role == controlTypes.ROLE_LIST and obj.name == None:
+            if obj.role == controlTypes.Role.PANE and obj.childCount == 2 and obj.firstChild.firstChild.role == controlTypes.Role.EDITABLETEXT and obj.lastChild.firstChild.role == controlTypes.Role.LIST and obj.name == None:
                 obj.name = self.CONST_INSERT_SYMBOL_WINDOW
-            if obj.role == controlTypes.ROLE_BUTTON and obj.name and "Ejecutar demo" in obj.name :
+            if obj.role == controlTypes.Role.BUTTON and obj.name and "Ejecutar demo" in obj.name :
                 obj.name = obj.name.replace("Ejecutar demo",self.runDemoButtonText)
-            if obj.role == controlTypes.ROLE_EDITABLETEXT and controlTypes.STATE_READONLY in obj.states and obj.name and "Identificador de equipo:" in obj.name :
+            if obj.role == controlTypes.Role.EDITABLETEXT and controlTypes.State.READONLY in obj.states and obj.name and "Identificador de equipo:" in obj.name :
                 obj.name = obj.name.replace("Identificador de equipo:",self.pcCodeEditText).replace("..",".")
         except: pass
     
@@ -70,7 +70,7 @@ class AppModule(appModuleHandler.AppModule):
         return obj
         
     def isEdicoEditor(self,obj) :
-        return obj.windowClassName and obj.windowClassName.startswith('WindowsForms10.RichEdit20W.app.') and obj.role == controlTypes.ROLE_STATICTEXT
+        return obj.windowClassName and obj.windowClassName.startswith('WindowsForms10.RichEdit20W.app.') and obj.role == controlTypes.Role.STATICTEXT
     
     def script_openQuckProfileWizard(self, gesture):
         wx.CallAfter(edicoProfileSetup.onQuickProfileWizardDialog, None)

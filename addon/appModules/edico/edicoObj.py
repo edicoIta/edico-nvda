@@ -51,7 +51,7 @@ class EdicoEditor(IAccessible) :
     def _get_role(self) :
         if(self.IAccessibleObject.accDescription() == "equazione") :
             return super(EdicoEditor,self)._get_role()
-        else: return controlTypes.ROLE_EDITABLETEXT
+        else: return controlTypes.Role.EDITABLETEXT
     
     def event_gainFocus(self):
         txt = edicoApi.getApiObject().GetHightLightedText()
