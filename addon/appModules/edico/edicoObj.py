@@ -159,6 +159,7 @@ class EdicoEditor(IAccessible) :
     'kb:alt+f2': 'caret_moveByCharacter',
     'kb:alt+f3': 'caret_moveByCharacter',
     'kb:alt+f5': 'caret_moveByCharacter',
+    'kb:delete': 'caret_moveByCharacter',
     'kb:control+d': 'caret_moveByLine',
     'kb:f4': 'f4',
     "kb:delete": "caret_deleteCharacter",
