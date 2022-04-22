@@ -3,7 +3,7 @@
 #Addon for EDICO Math Editor
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Copyright (C) 2022 Alberto Zanella - IRIFOR
+#Copyright (C) 2022 Alberto Zanella - I.Ri.Fo.R. - https://www.irifor.eu/
 
 import eventHandler
 from . import sharedMessages as shMsg
