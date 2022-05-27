@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 'edico' '0.1'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2022-05-27 10:48+0200\n"
+"PO-Revision-Date: 2022-05-27 11:03+0100\n"
+"Last-Translator: Alberto Zanella\n"
+"Language-Team: Asociación Comunidad Hispanohablante de NVDA (ESG42838771) <contacto@nvda.es>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+#: buildVars.py:23
+msgid "EDICO Scientific Editor"
+msgstr "Editor Científico EDICO"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid "This addon provides access to the EDICO scientific editor"
+msgstr "Este complemento permite acceder al editor científico EDICO"
+
+#. Translators: Insert Symbol dialog. You can set the name of the window that appears when pressing F5, natively EDICO doesn't speak nothing.
+#: addon\appModules\edico\__init__.py:27
+msgid "Insert symbol"
+msgstr "Insertar símbolo"
+
+#. Translators: this is the name of the Graphic viewer window obbject on the main window, you can get the correct name for your language using the navigator object.
+#: addon\appModules\edico\__init__.py:29
+msgid "Graphic viewer"
+msgstr "Visualizador gráfico"
+
+#. Translators: this is the name of the Braille viewer window obbject on the main window, you can get the correct name for your language using the navigator object.
+#: addon\appModules\edico\__init__.py:31
+msgid "Braille viewer"
+msgstr "Visualizador braille"
+
+#. Translators: the Run Demo button
+#: addon\appModules\edico\__init__.py:33
+msgid "Run demo"
+msgstr "Ejecutar demo"
+
+#. Translators: the Machine identifier readonly edit
+#: addon\appModules\edico\__init__.py:35
+msgid "Machine identifier:"
+msgstr "Identificador de equipo:"
+
+#. Translators: Message presented in input help mode.
+#: addon\appModules\edico\__init__.py:79
+msgid "Shows a dialog to revert edico profile options to the default."
+msgstr "Muestra un diálogo para revertir las opciones del perfil de EDICO a los valores por defecto."
+
+#. Translators: This string is the file name of the Lambda braille table for the translated language. The file should be present in the "brailleTables" directory in this addon. The default is the italian braille translation table.
+#: addon\appModules\edico\edicoProfileSetup.py:22
+msgid "edico-ita.utb"
+msgstr "edico-esp.utb"
+
+#. Translators: This is the label for the Quick Profile Wizard dialog.
+#. This dialog helps the user to reset relevant profile options without deleting his custom settings.
+#: addon\appModules\edico\edicoProfileSetup.py:114
+msgid "Revert EDICO Profile Wizard"
+msgstr "Asistente de Reversión del Perfil de EDICO"
+
+#. Translators: This is the static text of the Quick Profile Wizard dialog.
+#: addon\appModules\edico\edicoProfileSetup.py:119
+msgid "Choose which options you want to reset to the default value for the EDICO profile"
+msgstr "Elige qué opciones quieres restablecer al valor por defecto para el perfil de EDICO"
+
+#. Translators: This is the label for a checkbox in the
+#. Quick Profile Wizard dialog.
+#: addon\appModules\edico\edicoProfileSetup.py:123
+#, python-format
+msgid "Keep the EDICO braille table for the current language (%s)"
+msgstr "Mantener la tabla braille de EDICO para el idioma actual (%s)"
+
+#. Translators: This is the label for a checkbox in the
+#. Quick Profile Wizard dialog.
+#: addon\appModules\edico\edicoProfileSetup.py:127
+msgid "Set the braille cursor to tether the focus"
+msgstr "Configurar el cursor braille para seguir al foco"
+
+#. Translators: This is the label for a checkbox in the
+#. Quick Profile Wizard dialog.
+#: addon\appModules\edico\edicoProfileSetup.py:131
+msgid "Disable the Braille reading by paragraph"
+msgstr "Deshabilitar la lectura braille por párrafo"
+
+#. Translators: This is the label for a checkbox in the
+#. Quick Profile Wizard dialog.
+#: addon\appModules\edico\edicoProfileSetup.py:135
+msgid "Disable word wrapping of the braille line"
+msgstr "Desactivar ajuste de palabras en la línea braille"
+
+#. Translators: description of the calculator edit box
+#: addon\appModules\edico\edicoObj.py:44
+msgid "equation"
+msgstr "ecuación"
+
+#. Translators: this is a custom implementation of the globalCommands gesture, it doesn't support spelling.
+#: addon\appModules\edico\edicoObj.py:115
+msgid "Reports the current line under the application cursor."
+msgstr "Informa de la línea actual bajo el cursor de la aplicación."
+
+#. Translators: this is a custom implementation of the globalCommands gesture.
+#: addon\appModules\edico\edicoObj.py:121
+msgid "Announces the current selection in edit controls and documents."
+msgstr "Anuncia la selección actual en controles de edición y documentos."
+
+#. Translators: Lambda can't read from the current caret position, the implementation of sayAll provided starts reading from the top of the document.
+#: addon\appModules\edico\edicoObj.py:126
+msgid "reads from the beginning of the document up to the end of the text."
+msgstr "lee desde el comienzo del documento hasta el final del texto."
+
+#. Translators: title of the message box that appears when the user is installing the addon and an older version prevents the update to be completed.
+#: addon\installTasks.py:17
+msgid "Incompatible version of the addon detected"
+msgstr "Se detectó una versión incompatible del complemento"
+
+#. Translators: text of the message box that appears when the user is installing the addon and an older version prevents the update to be completed.
+#: addon\installTasks.py:20
+msgid ""
+"An old, incompatible version of this addon has been detected.\n"
+"This prevents the installation to be completed.\n"
+"Please uninstall the previous version before proceeding with the EDICO addon setup.\n"
+msgstr ""
+"Se ha detectado una versión antigua, incompatible de este complemento.\n"
+"Esto impide que la instalación se complete.\n"
+"Por favor, desinstala la versión anterior antes de continuar con la instalación del complemento para EDICO.\n"
+
+#. Translators: title of the message box that appears when user is installing the addon in NVDA and an "edico" profile is already present.
+#: addon\installTasks.py:26
+msgid "edico profile already exists"
+msgstr "El perfil edico ya existe"
+
+#. Translators: text of the message box that appears when user is installing the addon in NVDA and a "edico" profile is already present.
+#: addon\installTasks.py:29
+msgid ""
+"Another profile named \"edico\" is already present in your NVDA configuration.\n"
+"This may prevents the addon on create and configure the edico profile correctly.\n"
+"Please review default options for this addon using the Revert EDICO Profile Wizard (pressing NVDA+Alt+R) while the EDICO Application is active.\n"
+"Press OK to complete the addon setup.\n"
+msgstr ""
+"Otro perfil llamado \"edico\" está ya presente en tu configuración de NVDA. \n"
+"Esto puede impedir al complemento crear y configurar correctamente el perfil edico.\n"
+"Por favor, revisa las opciones por defecto para este complemento utilizando el Asistente de Reversión del Perfil de EDICO (pulsando NVDA+Alt+R) mientras la Aplicación EDICO esté activa.\n"
+"Pulsa Aceptar para completar la instalación del complemento.\n"
+
