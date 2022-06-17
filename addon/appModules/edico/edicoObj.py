@@ -3,7 +3,7 @@
 #Addon for EDICO Math Editor
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Copyright (C) 2022 Alberto Zanella - I.Ri.Fo.R. - https://www.irifor.eu/
+#Copyright (C) 2022 Alberto Zanella - IRIFOR
 
 import eventHandler
 from . import sharedMessages as shMsg
@@ -53,9 +53,12 @@ class EdicoEditor(IAccessible) :
         else: return controlTypes.Role.EDITABLETEXT
     
     def event_gainFocus(self):
-        txt = edicoApi.getApiObject().GetHightLightedText()
+        txt = ''
+        if self.name :
+            txt = txt + self.name
         if(edicoApi.getApiObject().GetObjectTypeAndText(self.windowHandle) != None) :
-            txt = edicoApi.getApiObject().GetObjectTypeAndText(self.windowHandle)
+            txt = txt + edicoApi.getApiObject().GetObjectTypeAndText(self.windowHandle)
+        else : txt = txt + edicoApi.getApiObject().GetHightLightedText()
         if edicoApi.getApiObject().GetLine() != None :
             txt = txt + " " + edicoApi.getApiObject().GetLine()
         speech.speakText(txt)
@@ -150,6 +153,7 @@ class EdicoEditor(IAccessible) :
     'kb:alt+2': 'caret_moveByCharacter',
     'kb:alt+3': 'caret_moveByCharacter',
     'kb:alt+4': 'caret_moveByCharacter',
+    'kb:control+7': 'reportAddedSymbol',
     'kb:alt+shift+1': 'caret_moveByCharacter',
     'kb:alt+shift+2': 'caret_moveByCharacter',
     'kb:alt+shift+3': 'caret_moveByCharacter',
