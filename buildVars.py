@@ -25,7 +25,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""This addon provides access to the EDICO scientific editor"""),
 	# version
-	"addon_version": "0.3",
+	"addon_version": "0.4",
 	# Author(s)
 	"addon_author": "Alberto Zanella - I.Ri.Fo.R. - https://www.irifor.eu/",
 	# URL for the add-on documentation support
