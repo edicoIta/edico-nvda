@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: 'edico' '0.1'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2022-05-27 10:48+0200\n"
-"PO-Revision-Date: 2022-05-27 10:58+0100\n"
-"Last-Translator: Alberto Zanella\n"
+"PO-Revision-Date: 2022-08-07 21:35+0200\n"
+"Last-Translator: Iván Novegil Cancelas <ivan.novegil.cancelas@gmail.com>\n"
 "Language-Team: Guillem León\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: ca\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
@@ -54,7 +54,7 @@ msgstr "Executar demostració"
 #. Translators: the Machine identifier readonly edit
 #: addon\appModules\edico\__init__.py:35
 msgid "Machine identifier:"
-msgstr "Identificador de equipo:"
+msgstr "Identificador de màquina:"
 
 #. Translators: Message presented in input help mode.
 #: addon\appModules\edico\__init__.py:79
@@ -110,17 +110,17 @@ msgstr "equació"
 #. Translators: this is a custom implementation of the globalCommands gesture, it doesn't support spelling.
 #: addon\appModules\edico\edicoObj.py:115
 msgid "Reports the current line under the application cursor."
-msgstr "Informa de la línea actual bajo el cursor de la aplicación."
+msgstr "Informa de la línia actual sota el cursor de l'aplicació."
 
 #. Translators: this is a custom implementation of the globalCommands gesture.
 #: addon\appModules\edico\edicoObj.py:121
 msgid "Announces the current selection in edit controls and documents."
-msgstr "Anuncia la selección actual en controles de edición y documentos."
+msgstr "Anuncia la selecció actual en controls d'edició i documents."
 
 #. Translators: Lambda can't read from the current caret position, the implementation of sayAll provided starts reading from the top of the document.
 #: addon\appModules\edico\edicoObj.py:126
 msgid "reads from the beginning of the document up to the end of the text."
-msgstr "lee desde el comienzo del documento hasta el final del texto."
+msgstr "llegeix des del començament del document fins al final del text."
 
 #. Translators: title of the message box that appears when the user is installing the addon and an older version prevents the update to be completed.
 #: addon\installTasks.py:17
@@ -155,4 +155,3 @@ msgstr ""
 "Això pot impedir que el complement creï i configuri correctament el perfil edico.\n"
 "Si us plau, revisa les opcions per defecte per al complement mitjançant l'assistent de reversió del perfil de l'EDICO (prement NVDA+Alt+R) mentre l'aplicació EDICO està activa.\n"
 "Prem OK per a completar la instal·lació del complement.\n"
-

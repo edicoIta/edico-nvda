@@ -3,7 +3,7 @@
 #Addon for EDICO Math Editor
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Copyright (C) 2022 Alberto Zanella - I.Ri.Fo.R. - https://www.irifor.eu/
+#Copyright (C) 2022 Alberto Zanella - IRIFOR
 
 import eventHandler
 from . import sharedMessages as shMsg
@@ -53,9 +53,12 @@ class EdicoEditor(IAccessible) :
         else: return controlTypes.Role.EDITABLETEXT
     
     def event_gainFocus(self):
-        txt = edicoApi.getApiObject().GetHightLightedText()
+        txt = ''
+        if self.name :
+            txt = txt + self.name
         if(edicoApi.getApiObject().GetObjectTypeAndText(self.windowHandle) != None) :
-            txt = edicoApi.getApiObject().GetObjectTypeAndText(self.windowHandle)
+            txt = txt + edicoApi.getApiObject().GetObjectTypeAndText(self.windowHandle)
+        else : txt = txt + edicoApi.getApiObject().GetHightLightedText()
         if edicoApi.getApiObject().GetLine() != None :
             txt = txt + " " + edicoApi.getApiObject().GetLine()
         speech.speakText(txt)
@@ -66,11 +69,14 @@ class EdicoEditor(IAccessible) :
             self.hasBackspaced = False
         else :    
             txt = edicoApi.getApiObject().GetBackSpace()
-            if config.conf['keyboard']['speakTypedCharacters']:
+            if txt == "\u2021" : #Handled by a custom script for Control+J
+                pass
+            elif config.conf['keyboard']['speakTypedCharacters']:
                 speech.speakText(txt)
         braille.handler.handleCaretMove(self)
     
     def script_caret_deleteCharacter(self,gesture):
+        txt = edicoApi.getApiObject().GetCharacter(9, "Ctrl+J")
         gesture.send()
         txt = edicoApi.getApiObject().GetChar()
         if config.conf['keyboard']['speakTypedCharacters']:
@@ -80,7 +86,8 @@ class EdicoEditor(IAccessible) :
     def script_caret_backspaceCharacter(self,gesture):
         self.hasBackspaced = True
         txt = edicoApi.getApiObject().GetBackSpace()
-        speech.speakText(txt)
+        if txt != "\u2021" :
+            speech.speakText(txt)
         gesture.send()
     
     def script_reportAddedSymbol(self,gesture):
@@ -131,10 +138,17 @@ class EdicoEditor(IAccessible) :
         appm = self.appModule
         appm.reportWindowStatus(appm.CONST_BRAILLE_VIEWER_WINDOW)
     
+    def script_controlJ(self,gesture):
+        txt = edicoApi.getApiObject().GetCharacter(0,"Ctrl+J")
+        if config.conf['keyboard']['speakTypedCharacters']:
+            speech.speakText(txt)
+        gesture.send()
+    
     def script_f4(self,gesture):
         gesture.send()
         appm = self.appModule
         appm.reportWindowStatus(appm.CONST_GRAPHIC_VIEWER_WINDOW)
+        
     
     __gestures = {
     'kb:f2': 'f2',
@@ -142,6 +156,7 @@ class EdicoEditor(IAccessible) :
     'kb:control+downArrow': 'caret_moveByLine',
     'kb:control+pageUp': 'caret_moveByLine',
     'kb:control+pageDown': 'caret_moveByLine',
+    'kb:control+j': 'controlJ',
     'kb:control+k': 'reportAddedSymbol',
     'kb:control+i': 'reportAddedSymbol',
     'kb:alt+rightArrow': 'caret_moveByCharacter',
@@ -150,11 +165,11 @@ class EdicoEditor(IAccessible) :
     'kb:alt+2': 'caret_moveByCharacter',
     'kb:alt+3': 'caret_moveByCharacter',
     'kb:alt+4': 'caret_moveByCharacter',
+    'kb:control+7': 'reportAddedSymbol',
     'kb:alt+shift+1': 'caret_moveByCharacter',
     'kb:alt+shift+2': 'caret_moveByCharacter',
     'kb:alt+shift+3': 'caret_moveByCharacter',
     'kb:alt+shift+4': 'caret_moveByCharacter',
-    'kb:alt+f1': 'caret_moveByCharacter',
     'kb:alt+f1': 'caret_moveByCharacter',
     'kb:alt+f2': 'caret_moveByCharacter',
     'kb:alt+f3': 'caret_moveByCharacter',

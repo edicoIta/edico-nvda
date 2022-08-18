@@ -1,2 +1,2 @@
 # edico-nvda
-Complemento de EDICO (Editor Científico ONCE) para NVDA
+Complement d'EDICO (Editor Científico ONCE) per a NVDA
