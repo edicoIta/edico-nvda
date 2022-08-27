@@ -10,6 +10,7 @@ sign  \x000D  0  #
 sign  \x0012  123578  #
 sign  \x0014  234578  #
 sign  \x0018  134678  #
+sign  \x0019  1345678  #
 sign  \x001C  12345678  #
 sign  \x0020  0  #
 sign  \x0021  2357  #
@@ -109,6 +110,8 @@ sign  \x007E  57  #
 sign  \x007F  7  #
 sign  \x008A  1234568  #
 sign  \x008B  1258  #
+sign  \x0090  68  #
+sign  \x0093  14568  #
 sign  \x009B  34568  #
 sign  \x00A1  23578  #
 sign  \x00A2  12678  #
@@ -191,6 +194,7 @@ sign  \x00EF  258  #
 sign  \x00F0  235678  #
 sign  \x00F1  124568  #
 sign  \x00F2  3468  #
+sign  \x00F3  346  #
 sign  \x00F4  1358  #
 sign  \x00F5  4567  #
 sign  \x00F6  2468  #
