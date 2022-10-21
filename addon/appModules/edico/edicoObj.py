@@ -48,7 +48,7 @@ class EdicoEditor(IAccessible) :
         speech.speakTextSelected(edicoApi.getApiObject().GetHightLightedText())
 
     def _get_role(self) :
-        if(self.IAccessibleObject.accDescription() == "equazione") :
+        if(self.IAccessibleObject.accDescription() == self.CALCULATOR_EQUATION_EDIT) :
             return super(EdicoEditor,self)._get_role()
         else: return controlTypes.Role.EDITABLETEXT
     
