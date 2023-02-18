@@ -30,6 +30,8 @@ addon_info = {
 	"addon_author": "Alberto Zanella - I.Ri.Fo.R. - https://www.irifor.eu/",
 	# URL for the add-on documentation support
 	"addon_url": None,
+    # URL for the add-on repository where the source code can be found
+	"addon_sourceURL": None,
 	# Documentation file name
 	"addon_docFileName": "readme.html",
 	# Minimum NVDA version supported (e.g. "2018.3.0", minor version is optional)
